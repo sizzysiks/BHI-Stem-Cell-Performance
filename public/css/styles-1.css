@@ -1,0 +1,403 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700;900&family=Montserrat:wght@600&display=swap");
+
+:root {
+  --grey: #9ea7b0;
+  --grey-light: #dde2e8;
+  --white: #fff;
+  --black: #000;
+  --red: #9f0015;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--grey);
+  font-family: "Inter", sans-serif;
+  position: relative;
+}
+
+.header {
+  width: min(90%, 160rem);
+  margin: 4.5rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 4.5rem;
+  left: 50%;
+  transform: translate(-50%, -4.5rem);
+  z-index: 50;
+  font-family: "Montserrat", sans-serif;
+}
+
+.header-logo {
+  margin-right: 5rem;
+}
+
+.nav {
+  flex-basis: 50%;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+}
+
+.nav-list_item a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 2.2rem;
+  line-height: 27px;
+  color: var(--white);
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s linear;
+  padding-bottom: 1rem;
+}
+
+.nav-list_item a:hover {
+  border-bottom: 1px solid var(--white);
+}
+
+.nav-btn {
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 768px) {
+.nav-btn {
+  display: block;
+ }
+  
+}
+
+.phone-nav {
+  position: fixed;
+  z-index: 99;
+  right: 0;
+  height: 100%;
+  background-color: var(--white);
+  width: 20rem;
+  padding-top: 10rem;
+  transition: all 0.3s linear;
+}
+
+.x-icon {
+  width: 2rem;
+  position: absolute;
+  top: 2rem;
+  right: 3rem;
+  cursor: pointer;
+}
+
+.phone-nav_list {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 5rem;
+}
+
+.phone-nav_list_item {
+  border-bottom: 1px solid var(--black);
+  width: 100%;
+}
+
+.phone-nav_list_item a {
+  display: block;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 2.2rem;
+  line-height: 27px;
+  color: var(--black);
+  transition: all 0.3s linear;
+  padding-bottom: 5px;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 98;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: all 0.3s linear;
+}
+
+.main {
+  width: 100%;
+}
+
+.hero-section {
+  height: 100vh;
+  background-image: url(../assets/hero.png);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-heading {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  color: var(--red);
+}
+
+.heading-1 {
+  font-weight: 700;
+  font-size: 3.3rem;
+  line-height: 20px;
+}
+
+.heading-2 {
+  font-weight: 400;
+  font-size: 2.7rem;
+  line-height: 33px;
+}
+
+.heading-3 {
+  font-weight: 900;
+  font-size: 5rem;
+  line-height: 61px;
+  font-style: italic;
+  text-transform: uppercase;
+}
+
+.hero-desc {
+  position: absolute;
+  bottom: 15%;
+  right: 5%;
+  width: min(90%, 62rem);
+  font-weight: 400;
+  font-size: 3rem;
+  line-height: 36px;
+  color: var(--white);
+}
+
+.autopsy-section {
+  width: min(90%, 160rem);
+  margin: 12rem auto;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.autopsy-heading {
+  width: min(90%, 50.2rem);
+  background-color: var(--white);
+  box-shadow: 0px 0px 25px rgba(134, 153, 183, 0.23);
+  border-radius: 8px;
+  padding: 3rem;
+  font-size: 2.3rem;
+  line-height: 30px;
+  color: var(--black);
+  position: absolute;
+  top: 2%;
+  left: 55%;
+  z-index: 3;
+}
+
+.autopsy-heading::after {
+  content: "";
+  position: absolute;
+  bottom: -1rem;
+  left: 7rem;
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--white);
+  transform: rotate(45deg);
+}
+
+.autopsy-heading h4 {
+  font-weight: 700;
+}
+
+.autopsy-heading p {
+  font-weight: 200;
+  margin-top: 2rem;
+}
+
+.human-box {
+  position: relative;
+  flex: 1;
+}
+
+.human {
+  position: relative;
+  height: 90rem;
+}
+
+.human img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.human-shadow {
+  width: 100%;
+}
+
+.human-img {
+  z-index: 2;
+}
+
+.autopsy-desc {
+  align-self: center;
+  width: min(90%, 60rem);
+}
+
+.autopsy-desc h4 {
+  font-weight: 700;
+  font-size: 3.9rem;
+  line-height: 47px;
+  color: var(--red);
+}
+
+.autopsy-desc p {
+  margin-top: 3rem;
+  font-weight: 400;
+  font-size: 3rem;
+  line-height: 36px;
+  color: var(--white);
+}
+
+.underline {
+  margin-inline: auto;
+  height: 2px;
+  width: min(90%, 160rem);
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-list {
+  margin-top: 9rem;
+  width: min(90%, 140rem);
+  margin-inline: auto;
+  gap: 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+.footer-list_item:nth-of-type(2) {
+  margin-inline: auto;
+}
+
+.footer-list_item h4 {
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  line-height: 24px;
+  color: var(--black);
+}
+
+.footer-list_item p {
+  color: var(--white);
+  text-transform: lowercase;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.footer-logo {
+  width: min(90%, 160rem);
+  margin-inline: auto;
+  margin-bottom: 3rem;
+}
+
+.footer-banner {
+  background-color: var(--grey-light);
+}
+
+.banner-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  width: min(90%, 160rem);
+  margin-inline: auto;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 18px;
+  letter-spacing: 0.05em;
+  padding: 1.8rem 0;
+}
+
+.footer-banner_list {
+  display: flex;
+  gap: 1rem;
+  margin-inline: auto;
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.social-list {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-banner_list-item a {
+  text-decoration: none;
+  color: var(--black);
+  border-bottom: 1px solid transparent;
+  padding-bottom: 5px;
+  transition: all 0.3s linear;
+}
+
+.footer-banner_list-item a:hover {
+  border-bottom: 1px solid var(--black);
+}
+
+.hide-nav .phone-nav,
+.hide-nav .overlay {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s linear;
+}
+
+@media only screen and (max-width: 68.75em) {
+  .nav {
+    display: none;
+  }
+
+  .autopsy-section {
+    flex-direction: column;
+    margin: 22rem auto;
+  }
+
+  .autopsy-heading {
+    top: -17%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media only screen and (max-width: 26.75em) {
+  .heading-3 {
+    font-size: 2.5rem;
+    line-height: 35px;
+  }
+
+  .autopsy-heading h4 {
+    font-size: 1.8rem;
+  }
+  .autopsy-heading p {
+    font-size: 1.6rem;
+  }
+}
