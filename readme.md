@@ -14,8 +14,43 @@ This repository contains the source code and content for the Stem Cell Performan
 - CSS3
 - JavaScript
 - Bootstrap
-- React
+- Threejs
 
 ## :wrench: Installation & Setup
 
 1. Clone the repository:
+
+2. Navigate to the project directory:
+
+
+3. Install the required dependencies:
+
+
+4. Start the development server:
+
+
+The application should now be running on `http://localhost:3000`.
+
+## :clipboard: Features
+
+- :newspaper: News and Updates
+- :microscope: Research Findings
+- :mortar_board: Educational Resources
+- :handshake: Networking Platform
+- :email: Contact Information
+
+## :handshake: Contributing
+
+Contributions are always welcome! Please read the [contributing guidelines](CONTRIBUTING.md) before submitting a pull request.
+
+## :bookmark: License
+
+This project is licensed under the [MIT License](LICENSE).
+
+## :envelope: Contact
+
+If you have any questions or suggestions, please feel free to reach out to us:
+
+- [Email](mailto:info@stemcellperformance.com)
+- [Twitter](https://twitter.com/stemcellperformance)
+- [Facebook](https://www.facebook.com/stemcellperformance)
