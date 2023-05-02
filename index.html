@@ -13,8 +13,8 @@
       <ul class="phone-nav_list">
         <li class="phone-nav_list_item"><a href="#">Home</a></li>
         <li class="phone-nav_list_item"><a href="#">About us</a></li>
-        <li class="phone-nav_list_item"><a href="#">Portfolio</a></li>
-        <li class="phone-nav_list_item"><a href="#">Contact us</a></li>
+        <li class="phone-nav_list_item"><a href="#">Learn</a></li>
+        <li class="phone-nav_list_item"><a href="#contact">Contact us</a></li>
       </ul>
     </div>
 
@@ -26,7 +26,7 @@
         <ul class="nav-list">
           <li class="nav-list_item"><a href="#">Home</a></li>
           <li class="nav-list_item"><a href="#">About us</a></li>
-          <li class="nav-list_item"><a href="#">Portfolio</a></li>
+          <li class="nav-list_item"><a href="#">learn</a></li>
           <li class="nav-list_item"><a href="#">Contact us</a></li>
         </ul>
       </nav>
@@ -71,7 +71,90 @@
     
     At BHI Performance, we are dedicated to providing body builders with the highest quality care and treatment options. We are passionate about helping our patients achieve their fitness goals and improving the field of sports medicine. If you're a body builder looking to enhance your performance and achieve your fitness goals, we invite you to explore our range of stem cell therapies and discover how we can help you reach your full potential.</p>
 </section>
-
+<title>Contact Us</title>
+<div id="contact"></div>
+<style>
+* {
+box-sizing: border-box;
+}
+body {
+background-color: #fff;
+}
+form {
+margin: auto;
+max-width: 500px;
+padding: 20px;
+border: 2px solid red;
+}
+input[type="text"],
+textarea {
+width: 100%;
+padding: 12px;
+border: 2px solid red;
+border-radius: 4px;
+resize: vertical;
+}
+input[type="submit"] {
+background-color: red;
+color: #fff;
+padding: 12px 20px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+display: block;
+margin: 0 auto;
+}
+input[type="submit"]:hover {
+background-color: #ff4444;
+}
+.container {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+}
+.col-25 {
+width: 25%;
+margin-top: 6px;
+}
+.col-75 {
+width: 75%;
+margin-top: 6px;
+}
+@‌media screen and (max-width: 600px) {
+.col-25,
+.col-75,
+input[type="submit"] {
+width: 100%;
+margin-top: 0;
+}
+}
+</style>
+<body>
+<form action="#">
+<div class="container">
+<div class="col-25">
+<label for="name">Name</label>
+</div>
+<div class="col-75">
+<input type="text" id="name" name="name" required>
+</div>
+<div class="col-25">
+<label for="email">Email</label>
+</div>
+<div class="col-75">
+<input type="text" id="email" name="email" required>
+</div>
+<div class="col-25">
+<label for="message">Message</label>
+</div>
+<div class="col-75">
+<textarea id="message" name="message" required></textarea>
+</div>
+<div class="col-75">
+<input type="submit" value="Submit">
+</div>
+</div>
+</form>
 
 
 
