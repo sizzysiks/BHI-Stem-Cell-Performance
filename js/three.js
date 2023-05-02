@@ -1,9 +1,12 @@
 //Import the THREE.js library
-import * as THREE from "https://cdn.skypack.dev/three@0.129.0/build/three.module.js";
+// import * as THREE from "https://cdn.skypack.dev/three@0.129.0/build/three.module.js";
+import * as THREE from "./three.module.js";
 // To allow for the camera to move around the scene
 import { OrbitControls } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/controls/OrbitControls.js";
+// import { OrbitControls } from "./OrbitControls.js";
 // To allow for importing the .gltf file
 import { GLTFLoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/loaders/GLTFLoader.js";
+// import { GLTFLoader } from "./GLTFLoader.js";
 
 //Create a Three.JS Scene
 const sizes = {
@@ -14,8 +17,8 @@ const sizes = {
 
 const scene = new THREE.Scene();
 //create a new camera with positions and angles
-const camera = new THREE.PerspectiveCamera(80, window.innerWidth / window.innerHeight, 0.1, 1000);
-camera.position.y = 12; // adjust the y axis of camera
+const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+camera.position.set(0, 12, 0) // adjust the y axis of camera
 
 //Keep track of the mouse position, so we can make the human move
 let mouseX = window.innerWidth / 2;
@@ -76,7 +79,7 @@ loader.load(
     // rotate the object to make it sit straight up
     object.rotation.x =0;
     // set position of human
-    object.position.set(0, 5, 0);
+    object.position.set(0, 0, 0);
 
     // Traverse the scene and change colors
     // object.traverse((child)=>{
@@ -115,7 +118,7 @@ const points = [
     element: document.querySelector('#point-1')
   },
   {
-    position: new THREE.Vector3(-5,-10,0.1),
+    position: new THREE.Vector3(1,-10,0.1),
     element: document.querySelector('#point-2')
   },
   {

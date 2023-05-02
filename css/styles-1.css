@@ -23,7 +23,7 @@ html {
 }
 
 body {
-  background-color: #250304;
+  background-color: #fff;
   font-family: "Inter", sans-serif;
   position: relative;
   overflow-x: hidden;
@@ -146,13 +146,19 @@ body {
   background-position: center;
   background-size: cover;
   position: relative;
-  margin-bottom: 0;
+  /* margin-bottom: 0; */
+}
+
+.next-section {
+  margin-top: 200px;
 }
 
 .hero-heading {
   position: absolute;
   top: 20%;
-  left: 10%;
+  left: 55%;
+  right: 0%;
+  transform: translateY(-50%);
   color: var(--red);
 }
 
@@ -188,18 +194,24 @@ body {
 }
 
 .autopsy-section {
-  width:100%;
-  background-image: linear-gradient(to bottom, #000000, #ffd700);
-  /* background-image: url(../assets/midbanner.jpg); */
+  width: 100%;
+  background-image: url(../assets/hero.jpg);
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: top center;
   background-size: cover;
-  margin: 12rem auto;
+  height: 100vh;
   position: relative;
   display: flex;
   flex-wrap: wrap;
   margin-top: 0;
-}
+  }
+  
+  @media screen and (max-width: 768px) {
+  .autopsy-section {
+  height: auto;
+  min-height: 100vh;
+  }
+  }
 
 .content-container {
   width: 100%;
@@ -245,6 +257,9 @@ body {
 .human-box {
   position: relative;
   flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .human {
@@ -257,7 +272,9 @@ body {
     height: 100vh !important;
     position: absolute;
     top: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    /* right: 500; */
   }
 
 .human img {
@@ -276,8 +293,9 @@ body {
 }
 .points{
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 52%;
+  left: 75%;
+  transform: translate(-50%, -50%);
   width: 3em;
   height: 3em;
   border: none;
@@ -290,15 +308,15 @@ body {
   justify-content: center;
   transition: all 0.2s;
   z-index: 99;
-}
-.points::before{
+  }
+  
+  .points::before{
   position: absolute;
   top: 45px;
   left: -90px;
   background: rgba(0, 0, 0, 0.629);
   color: white;
   width: 200px;
-  /* height: 80px; */
   padding: 1em;
   border-radius: 5px;
   text-align: left;
@@ -306,7 +324,7 @@ body {
   opacity: 0;
   transition: all 0.2s;
   pointer-events: none;
-}
+  }
 
 .points:hover{
   border-color: white;

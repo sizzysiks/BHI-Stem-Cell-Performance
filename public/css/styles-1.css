@@ -23,9 +23,10 @@ html {
 }
 
 body {
-  background-color: var(--grey);
+  background-color: #250304;
   font-family: "Inter", sans-serif;
   position: relative;
+  overflow-x: hidden;
 }
 
 .header {
@@ -111,7 +112,7 @@ body {
 }
 
 .phone-nav_list_item {
-  border-bottom: 1px solid var(--black);
+  border-bottom: 1px solid var(--white);
   width: 100%;
 }
 
@@ -130,7 +131,7 @@ body {
   position: fixed;
   inset: 0;
   z-index: 98;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #250304;
   transition: all 0.3s linear;
 }
 
@@ -140,11 +141,12 @@ body {
 
 .hero-section {
   height: 100vh;
-  background-image: url(../assets/hero.png);
+  background-image: url(../assets/banner.jpg);
   background-repeat: no-repeat;
-  background-position: top;
+  background-position: center;
   background-size: cover;
   position: relative;
+  margin-bottom: 0;
 }
 
 .hero-heading {
@@ -186,11 +188,23 @@ body {
 }
 
 .autopsy-section {
-  width: min(90%, 160rem);
+  width:100%;
+  background-image: linear-gradient(to bottom, #000000, #ffd700);
+  /* background-image: url(../assets/midbanner.jpg); */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   margin: 12rem auto;
   position: relative;
   display: flex;
   flex-wrap: wrap;
+  margin-top: 0;
+}
+
+.content-container {
+  width: 100%;
+  max-width: 160rem;
+  margin: 0 auto;
 }
 
 .autopsy-heading {
@@ -201,7 +215,7 @@ body {
   padding: 3rem;
   font-size: 2.3rem;
   line-height: 30px;
-  color: var(--black);
+  color: var(--white);
   position: absolute;
   top: 2%;
   left: 55%;
@@ -234,9 +248,17 @@ body {
 }
 
 .human {
+  width: 100%;
   position: relative;
-  height: 90rem;
+  height: 100vh;
 }
+  #container3D canvas {
+    width: 50vw !important;
+    height: 100vh !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 
 .human img {
   position: absolute;
@@ -250,7 +272,113 @@ body {
 }
 
 .human-img {
-  z-index: 2;
+  /* z-index: 2; */
+}
+.points{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 3em;
+  height: 3em;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.629);
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  z-index: 99;
+}
+.points::before{
+  position: absolute;
+  top: 45px;
+  left: -90px;
+  background: rgba(0, 0, 0, 0.629);
+  color: white;
+  width: 200px;
+  /* height: 80px; */
+  padding: 1em;
+  border-radius: 5px;
+  text-align: left;
+  font-size: 1rem;
+  opacity: 0;
+  transition: all 0.2s;
+  pointer-events: none;
+}
+
+.points:hover{
+  border-color: white;
+}
+
+#point-1::before{
+  content:'PITUITARY: Despite its small size, the gland influences nearly every part of your body. The hormones it produces help regulate important functions, such as growth, blood pressure and reproduction.';
+}
+#point-1:hover::before{
+  opacity: 1;
+}
+
+#point-2::before{
+  content:'BRAIN STEM: Responsible for regulating most of the body`s automatic functions that are essential for life. These include: breathing. heartbeat.';
+}
+#point-2:hover::before{
+  opacity: 1;
+}
+
+#point-3::before{
+  content:'OLFACTORY BULBS: The axons of olfactory receptor (smell receptor) cells extend directly into the highly organized olfactory bulb, where information about odours is processed.';
+}
+#point-3:hover::before{
+  opacity: 1;
+}
+
+#point-4::before{
+  content:'OLFACTORY BULBS: The axons of olfactory receptor (smell receptor) cells extend directly into the highly organized olfactory bulb, where information about odours is processed.';
+}
+#point-4:hover::before{
+  opacity: 1;
+}
+
+#point-5::before{
+  content:'OLFACTORY BULBS: The axons of olfactory receptor (smell receptor) cells extend directly into the highly organized olfactory bulb, where information about odours is processed.';
+}
+#point-5:hover::before{
+  opacity: 1;
+}
+
+#point-6::before{
+  content:'OLFACTORY BULBS: The axons of olfactory receptor (smell receptor) cells extend directly into the highly organized olfactory bulb, where information about odours is processed.';
+}
+#point-6:hover::before{
+  opacity: 1;
+}
+
+#point-7::before{
+  content:'OLFACTORY BULBS: The axons of olfactory receptor (smell receptor) cells extend directly into the highly organized olfactory bulb, where information about odours is processed.';
+}
+#point-7:hover::before{
+  opacity: 1;
+}
+
+#point-8::before{
+  content: 'Sample text'
+}
+#point-8:hover::before{
+  opacity: 1;
+}
+
+#point-9::before{
+  content:'OLFACTORY BULBS: The axons of olfactory receptor (smell receptor) cfactory bulb, where information about odours is processed.';
+}
+#point-9:hover::before{
+  opacity: 1;
+}
+#point-10::before{
+  content:'OLFACTORY BULBS: The axons of olfactory receptor (smell receptor) cells extend directly into the highly organized olfactory bulb, where information about odours is processed.';
+}
+#point-10:hover::before{
+  opacity: 1;
 }
 
 .autopsy-desc {
@@ -300,7 +428,7 @@ body {
   margin-bottom: 1.5rem;
   font-weight: 700;
   line-height: 24px;
-  color: var(--black);
+  color: var(--white);
 }
 
 .footer-list_item p {
@@ -317,7 +445,7 @@ body {
 }
 
 .footer-banner {
-  background-color: var(--grey-light);
+  background-image: linear-gradient(45deg, #250304, #c21c1f);
 }
 
 .banner-container {
@@ -354,14 +482,14 @@ body {
 
 .footer-banner_list-item a {
   text-decoration: none;
-  color: var(--black);
+  color: var(--white);
   border-bottom: 1px solid transparent;
   padding-bottom: 5px;
   transition: all 0.3s linear;
 }
 
 .footer-banner_list-item a:hover {
-  border-bottom: 1px solid var(--black);
+  border-bottom: 1px solid var(--white);
 }
 
 .hide-nav .phone-nav,
@@ -399,5 +527,18 @@ body {
   }
   .autopsy-heading p {
     font-size: 1.6rem;
+  }
+}
+
+#container3D canvas {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+ overflow: hidden;
+}
+
+@media screen and (max-width: 768px) {
+  #container3D {
+    display: none;
   }
 }
