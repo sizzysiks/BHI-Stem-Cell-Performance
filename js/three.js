@@ -17,8 +17,8 @@ const sizes = {
 
 const scene = new THREE.Scene();
 //create a new camera with positions and angles
-const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
-camera.position.set(0, 12, 0) // adjust the y axis of camera
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+camera.position.set(0, 0, 0) // adjust the y axis of camera
 
 //Keep track of the mouse position, so we can make the human move
 let mouseX = window.innerWidth / 2;
@@ -79,7 +79,7 @@ loader.load(
     // rotate the object to make it sit straight up
     object.rotation.x =0;
     // set position of human
-    object.position.set(0, 0, 0);
+    object.position.set(0, 3, 0);
 
     // Traverse the scene and change colors
     // object.traverse((child)=>{
