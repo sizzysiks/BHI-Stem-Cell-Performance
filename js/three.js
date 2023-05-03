@@ -18,7 +18,7 @@ const sizes = {
 const scene = new THREE.Scene();
 //create a new camera with positions and angles
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-camera.position.set(0, 0, 0) // adjust the y axis of camera
+camera.position.set(0, 7, 0) // adjust the y axis of camera set zero for human
 
 //Keep track of the mouse position, so we can make the human move
 let mouseX = window.innerWidth / 2;
@@ -79,7 +79,9 @@ loader.load(
     // rotate the object to make it sit straight up
     object.rotation.x =0;
     // set position of human
-    object.position.set(0, 3, 0);
+    // object.position.set(0, 3, 0);
+    // set position of hulk
+    object.position.set(0, -10, 0);
 
     // Traverse the scene and change colors
     // object.traverse((child)=>{
@@ -112,6 +114,51 @@ loader.load(
 /**
  * Points in 3d. Each point corresponds to a specific html element with it'w own position in 3d
  */
+// human points
+// const points = [
+//   {
+//     position: new THREE.Vector3(-2,-1,0.1),
+//     element: document.querySelector('#point-1')
+//   },
+//   {
+//     position: new THREE.Vector3(1,-10,0.1),
+//     element: document.querySelector('#point-2')
+//   },
+//   {
+//     position: new THREE.Vector3(-0,-5,-0.6),
+//     element: document.querySelector('#point-3')
+//   },
+//   {
+//     position: new THREE.Vector3(1,1, -0.1),
+//     element: document.querySelector('#point-4')
+//   },
+//   {
+//     position: new THREE.Vector3(-2,6,-0.1),
+//     element: document.querySelector('#point-5')
+//   },
+//   {
+//     position: new THREE.Vector3(1.5,10,-0.1),
+//     element: document.querySelector('#point-6')
+//   },
+//   {
+//     position: new THREE.Vector3(-1,-10,-0.1),
+//     element: document.querySelector('#point-7')
+//   },
+//   {
+//     position: new THREE.Vector3(4,-1,-0.1),
+//     element: document.querySelector('#point-8')
+//   },
+//   {
+//     position: new THREE.Vector3(-1,-15,0.1),
+//     element: document.querySelector('#point-9')
+//   },
+//   {
+//     position: new THREE.Vector3(1,-16,0.1),
+//     element: document.querySelector('#point-10')
+//   },
+// ]
+
+// hulk points
 const points = [
   {
     position: new THREE.Vector3(-2,-1,0.1),
@@ -134,11 +181,11 @@ const points = [
     element: document.querySelector('#point-5')
   },
   {
-    position: new THREE.Vector3(1.5,10,-0.1),
+    position: new THREE.Vector3(1.5,7,-0.1),
     element: document.querySelector('#point-6')
   },
   {
-    position: new THREE.Vector3(-1,-10,-0.1),
+    position: new THREE.Vector3(-1,-7,-0.1),
     element: document.querySelector('#point-7')
   },
   {
@@ -146,11 +193,11 @@ const points = [
     element: document.querySelector('#point-8')
   },
   {
-    position: new THREE.Vector3(-1,-15,0.1),
+    position: new THREE.Vector3(-2,-12,0.5),
     element: document.querySelector('#point-9')
   },
   {
-    position: new THREE.Vector3(1,-16,0.1),
+    position: new THREE.Vector3(1,-10,0.1),
     element: document.querySelector('#point-10')
   },
 ]
@@ -166,7 +213,7 @@ document.getElementById("container3D").appendChild(renderer.domElement);
 camera.position.z = objToRender === "human" ? 22 : 500;
 
 //Add lights to the scene, so we can actually see the 3D model
-const topLight = new THREE.DirectionalLight(0xffffff, 1); // (color, intensity)
+const topLight = new THREE.DirectionalLight(0xffffff, 6); // (color, intensity)
 topLight.position.set(0, 500, 500) //top-left-ish
 topLight.castShadow = true;
 scene.add(topLight);
