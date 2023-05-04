@@ -35,7 +35,7 @@ body {
   margin: 4.5rem auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   position: absolute;
   top: 4.5rem;
   left: 50%;
@@ -45,12 +45,13 @@ body {
 }
 
 .header-logo {
-  margin-right: 5rem;
-  margin-top: -5rem;
+  margin-right: 0rem;
+  margin-top: 0rem;
 }
 
 .nav {
   flex-basis: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .nav-list {
@@ -58,6 +59,7 @@ body {
   justify-content: space-between;
   align-items: center;
   flex: 1;
+  padding: 0 20px;
 }
 
 .nav-list_item a {
@@ -66,13 +68,18 @@ body {
   font-size: 2.2rem;
   line-height: 27px;
   color: var(--red);
-  border-bottom: 1px solid transparent;
+  border-bottom: 2px solid transparent;
   transition: all 0.3s linear;
   padding-bottom: 1rem;
+  padding-left: 8px;
+  padding-right: 8px;
+  text-shadow: 0 0 5px rgba(255, 0, 0, 0);
 }
 
 .nav-list_item a:hover {
-  border-bottom: 1px solid var(--pink);
+  border-bottom: 2px solid var(--pink);
+  color: var(--white);
+  text-shadow: 0 0 10px rgba(255, 0, 0, 7);
 }
 
 .nav-btn {
@@ -80,7 +87,7 @@ body {
   display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 700px) {
 .nav-btn {
   display: block;
  }
@@ -114,7 +121,7 @@ body {
 }
 
 .phone-nav_list_item {
-  border-bottom: 1px solid var(--white);
+  border-bottom: 1px solid var(--red);
   width: 100%;
 }
 
@@ -133,9 +140,20 @@ body {
   position: fixed;
   inset: 0;
   z-index: 98;
-  background-color: #250304;
-  transition: all 0.3s linear;
-}
+  background: linear-gradient(135deg, #250304, #d30a0d); 
+  opacity: 0; 
+  transition: all 0.5s ease-in-out;
+  animation: fadeIn 0.5s ease-in-out forwards;
+  }
+  
+  @keyframes fadeIn {
+  0% {
+  opacity: 0;
+  }
+  100% {
+  opacity: 1;
+  }
+  }
 
 .main {
   width: 100%;
@@ -165,6 +183,11 @@ body {
   width: 100%;
   max-width: 50rem;
   }
+  /* .hero-logo {
+    position: absolute;
+    right: 20;
+    top: 0;
+  } */
   
   @media screen and (max-width: 767px) {
   .hero-section {
@@ -331,7 +354,7 @@ body {
   padding: 1em;
   border-radius: 5px;
   text-align: left;
-  font-size: 1rem;
+  font-size: 1.2rem;
   opacity: 0;
   transition: all 0.4s ease; 
   pointer-events: none;
@@ -401,7 +424,7 @@ body {
 }
 
 #point-6::before{
-  content:'OLFACTORY BULBS: The axons of olfactory receptor (smell receptor) cells extend directly into the highly organized olfactory bulb, where information about odours is processed.';
+  content:'Knee: Stem cell therapy can help athletes recover from knee injuries, including ligament tears and arthritis, by promoting tissue regeneration and reducing inflammation.';
 }
 #point-6:hover::before{
   opacity: 1;
@@ -474,43 +497,101 @@ body {
   }
   
   .footer-banner_list {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  }
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    font-family: 'Roboto', sans-serif; /* Updated font family */
+    }
+    
+    .footer-banner_list-item a {
+    text-decoration: none;
+    color: var(--black);
+    border-bottom: 1px solid transparent;
+    padding-bottom: 5px;
+    transition: all 0.3s linear;
+    margin: 0 10px;
+    font-size: 18px;
+    position: relative; /* Added for the glowing effect */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    }
+    
+    .footer-banner_list-item a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--pink);
+    opacity: 0;
+    transition: all 0.3s linear;
+    }
+    
+    .footer-banner_list-item a:hover {
+    color: var(--white);
+    }
+    
+    .footer-banner_list-item a:hover::after {
+    opacity: 1;
+    bottom: -4px; /* Added for the glowing effect */
+    }
+    
+    .footer-banner_list-item a:hover {
+    text-shadow: 0 0 10px var(--red), 0 0 20px var(--red); /* Added for the neon glowing shadow */
+    }
   
-  .footer-banner_list-item a {
-  text-decoration: none;
-  color: var(--black);
-  border-bottom: 1px solid transparent;
-  padding-bottom: 5px;
-  transition: all 0.3s linear;
-  margin: 0 10px;
-  font-size: 18px;
-  }
-  
-  .footer-social {
-  margin-top: 20px;
-  text-align: center;
-  filter: grayscale(100%) invert(100%);
-  }
-  
-  .social-list {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-  }
-  
-  .social-icon {
-  margin-right: 20px;
-  }
-  
-  .social-icon:last-of-type {
-  margin-right: 0;
-  }
-.footer-banner_list-item a:hover {
-  border-bottom: 1px solid var(--white);
-}
+    .footer-social {
+      margin-top: 20px;
+      text-align: center;
+      }
+      
+      .social-list {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+      }
+      
+      .social-icon {
+      margin-right: 20px;
+      position: relative;
+      }
+      
+      .social-icon:last-of-type {
+      margin-right: 0;
+      }
+      
+      .social-icon a {
+      display: inline-block;
+      filter: grayscale(100%) invert(100%);
+      transition: filter 0.3s;
+      }
+      
+      .social-icon:hover a {
+      filter: grayscale(0%) invert(0%);
+      }
+      
+      .social-icon::before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      width: calc(100% + 10px);
+      height: calc(100% + 10px);
+      border-radius: 50%;
+      background: rgba(255, 0, 0, 0);
+      box-shadow: 0 0 0 rgba(255, 0, 0, 0);
+      z-index: -1;
+      transition: box-shadow 0.3s;
+      }
+      
+      .social-icon:hover::before {
+      box-shadow: 0 0 8px rgba(255, 0, 0, 0.5), 0 0 12px rgba(255, 0, 0, 0.5);
+      }
+      
+      .footer-banner_list-item a:hover {
+      border-bottom: 1px solid var(--white);
+      }
 
 .hide-nav .phone-nav,
 .hide-nav .overlay {
@@ -552,7 +633,7 @@ body {
 
 #container3D canvas {
   width: 50%;
-  height: 100%;
+  height: 50%;
   position: absolute;
  overflow: hidden;
 }
@@ -565,9 +646,12 @@ body {
 
 .about-us {
   text-align: center;
-  padding: 50px 0;
+  padding: 50px;
+  max-width: 90%;
+  margin: 0 auto;
   background-color: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 2px solid #f44336; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 0 50px rgba(244, 67, 54, 0.3); 
   border-radius: 8px;
   font-family: 'Roboto', sans-serif;
   }
@@ -586,7 +670,7 @@ body {
   color: #555;
   }
   
-  @‌media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) {
   .about-us {
   padding: 100px 0;
   }
@@ -594,18 +678,18 @@ body {
   font-size: 20px;
   max-width: 800px;
   }
-}
-
-* {
+  }
+  
+  * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
+  }
 
-body {
+/* body {
   background-color: #f5f5f5;
   font-family: 'Roboto', sans-serif;
-}
+} */
 
 form {
   margin: auto;
@@ -614,6 +698,8 @@ form {
   background-color: rgba(255, 255, 255, 0.9);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
+  border: 2px solid #f44336;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 0 10px rgba(244, 67, 54, 0.3);
 }
 
 input[type="text"],
@@ -695,8 +781,7 @@ input[type="submit"]:hover {
   max-width: 600px;
   box-shadow: 0 0 0 2px #f44336;
   transition: box-shadow 0.3s;
-  overflow: hidden; /* Added to hide the corners of the image */
-  /* margin-top: 50px; */
+  overflow: hidden;
   }
   
   .box-bg {
@@ -705,19 +790,65 @@ input[type="submit"]:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('../assets/heroold.jpg'); 
-  background-size: contain;
+  background-image: url('../assets/black.png');
+  background-size: cover; /* Changed from 'contain' to 'cover' */
   background-position: center;
   background-repeat: no-repeat;
-  z-index: -1; 
+  z-index: -1;
   }
   
   .box:hover {
   box-shadow: 0 0 10px 10px #f44336;
   }
   
+  
+  @media screen and (max-width: 768px) {
+  .box {
+  width: 80%; 
+  padding: 20%;
+  }
+  }
+
   p {
   margin: 0;
   color: #fff; 
   position: relative; 
   }
+
+  .above-logo {
+   display: block;
+   /* margin: 0 auto; */
+   /* margin: -5 auto; */
+   
+
+  }
+
+  /* .glowing-particles {
+    filter: drop-shadow(0 0 5px #c90076);
+    } */
+
+  /* .particles-container {
+    position: relative;
+    }
+    
+    .glow-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none; 
+    } */
+
+    /* #canvas-container {
+      position: relative;
+      }
+      
+      #particles-js canvas,
+      #glow-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      }
+      
+      .glowing-particles {
+      filter: blur(4px) brightness(150%);
+      } */

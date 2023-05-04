@@ -1,6 +1,6 @@
 //Import the THREE.js library
-import * as THREE from "https://cdn.skypack.dev/three@0.129.0/build/three.module.js";
-// import * as THREE from "./three.module.js";
+// import * as THREE from "https://cdn.skypack.dev/three@0.129.0/build/three.module.js";
+import * as THREE from "./three.module.js";
 // To allow for the camera to move around the scene
 import { OrbitControls } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/controls/OrbitControls.js";
 // import { OrbitControls } from "./OrbitControls.js";
@@ -17,8 +17,12 @@ const sizes = {
 
 const scene = new THREE.Scene();
 //create a new camera with positions and angles
-const camera = new THREE.PerspectiveCamera(85, window.innerWidth / window.innerHeight, 0.1, 1000);
-camera.position.set(0, 7, 0) // adjust the y axis of camera set zero for human
+const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+camera.position.set(0, 5, 0); // adjust the y axis of camera set zero for human
+
+// camera.zoom = 0.9;
+// camera.updateProjectionMatrix();
+
 
 //Keep track of the mouse position, so we can make the human move
 let mouseX = window.innerWidth / 2;
@@ -74,14 +78,14 @@ loader.load(
     object.position.sub(objectCenter);
 
     // scale the object to make it larger
-    object.scale.set(900, 900, 900);
+    object.scale.set(900, 500, 900);
 
     // rotate the object to make it sit straight up
     object.rotation.x =0;
     // set position of human
     // object.position.set(0, 3, 0);
     // set position of hulk
-    object.position.set(0, 7, 0);
+    object.position.set(0, 5, 0);
 
     // Traverse the scene and change colors
     // object.traverse((child)=>{
@@ -93,9 +97,9 @@ loader.load(
       if (child instanceof THREE.Mesh) {
       // Set the mesh material to a marble glossy white material
       child.material = new THREE.MeshStandardMaterial({
-      color: '#FFFFFF', // white color
-      metalness: 0.5, // low metalness for marble-like appearance
-      roughness: 0.2, // slightly rough for a glossy finish
+      // color: '#FFFFFF', // white color
+      // metalness: 0.5, // low metalness for marble-like appearance
+      // roughness: 0.2, // slightly rough for a glossy finish
       });
       }
       });
@@ -117,43 +121,43 @@ loader.load(
 // human points
 const points = [
   {
-    position: new THREE.Vector3(-2,-1,0.1),
+    position: new THREE.Vector3(0,-1,0.1),
     element: document.querySelector('#point-1')
   },
   {
-    position: new THREE.Vector3(1,-10,0.1),
+    position: new THREE.Vector3(6,-10,0.1),
     element: document.querySelector('#point-2')
   },
   {
-    position: new THREE.Vector3(-0,-5,-0.6),
+    position: new THREE.Vector3(7,-5,-0.1),
     element: document.querySelector('#point-3')
   },
   {
-    position: new THREE.Vector3(1,1, -0.1),
+    position: new THREE.Vector3(7,1, -0.1),
     element: document.querySelector('#point-4')
   },
   {
-    position: new THREE.Vector3(-2,6,-0.1),
+    position: new THREE.Vector3(1,6,-0.1),
     element: document.querySelector('#point-5')
   },
   {
-    position: new THREE.Vector3(1.5,10,-0.1),
+    position: new THREE.Vector3(3,3,-0.1),
     element: document.querySelector('#point-6')
   },
   {
-    position: new THREE.Vector3(-1,-10,-0.1),
+    position: new THREE.Vector3(2,-5,-0.1),
     element: document.querySelector('#point-7')
   },
   {
-    position: new THREE.Vector3(4,-1,-0.1),
+    position: new THREE.Vector3(5,0,-0.1),
     element: document.querySelector('#point-8')
   },
   {
-    position: new THREE.Vector3(-1,-15,0.1),
+    position: new THREE.Vector3(5,-4,0.1),
     element: document.querySelector('#point-9')
   },
   {
-    position: new THREE.Vector3(1,-16,0.1),
+    position: new THREE.Vector3(3,-8,0.1),
     element: document.querySelector('#point-10')
   },
 ]
@@ -213,19 +217,27 @@ document.getElementById("container3D").appendChild(renderer.domElement);
 camera.position.z = objToRender === "human" ? 22 : 500;
 
 //Add lights to the scene, so we can actually see the 3D model
-const topLight = new THREE.DirectionalLight(0xffffff, 1); // (color, intensity)
+const topLight = new THREE.DirectionalLight(0xffffff, 0.7); // (color, intensity)
 topLight.position.set(0, 500, 500) //top-left-ish
 topLight.castShadow = true;
 scene.add(topLight);
 
-const ambientLight = new THREE.AmbientLight(0x333333, objToRender === "human" ? 5 : 1);
+const ambientLight = new THREE.AmbientLight(0x333333, objToRender === "human" ? 3 : 1);
 scene.add(ambientLight);
 
 //This adds controls to the camera, so we can rotate / zoom it with the mouse
 if (objToRender === "human") {
   controls = new OrbitControls(camera, renderer.domElement);
-}
-
+  
+  // Limit up and down rotation
+  controls.minPolarAngle = Math.PI / 2; // Block upward rotation
+  controls.maxPolarAngle = Math.PI / 2; // Block downward rotation
+  
+  // Limit left and right rotation
+  const rotationAngle = Math.PI / 4; // Adjust this value to set the allowed rotation angle to the left and right
+  controls.minAzimuthAngle = -rotationAngle; // Limit left rotation
+  controls.maxAzimuthAngle = rotationAngle; // Limit right rotation
+  }
 //Render the scene
 function animate() {
   // requestAnimationFrame(animate);
