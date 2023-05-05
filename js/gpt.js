@@ -94,7 +94,7 @@ const handleSubmit = async (e) => {
     // messageDiv.innerHTML = "..."
     loader(messageDiv);
 
-    const response = await fetch('https://turing-gpt.onrender.com/', {
+    const response = await fetch('https://bhi-stem-cells.onrender.com/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

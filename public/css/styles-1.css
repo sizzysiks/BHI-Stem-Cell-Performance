@@ -6,6 +6,7 @@
   --white: #fff;
   --black: #000;
   --red: #9f0015;
+  --pink:#f535aa;
 }
 
 *,
@@ -23,7 +24,7 @@ html {
 }
 
 body {
-  background-color: #250304;
+  background-color: #fff;
   font-family: "Inter", sans-serif;
   position: relative;
   overflow-x: hidden;
@@ -34,7 +35,7 @@ body {
   margin: 4.5rem auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   position: absolute;
   top: 4.5rem;
   left: 50%;
@@ -44,11 +45,13 @@ body {
 }
 
 .header-logo {
-  margin-right: 5rem;
+  margin-right: 0rem;
+  margin-top: 0rem;
 }
 
 .nav {
   flex-basis: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .nav-list {
@@ -56,6 +59,7 @@ body {
   justify-content: space-between;
   align-items: center;
   flex: 1;
+  padding: 0 20px;
 }
 
 .nav-list_item a {
@@ -63,14 +67,19 @@ body {
   font-weight: 600;
   font-size: 2.2rem;
   line-height: 27px;
-  color: var(--white);
-  border-bottom: 1px solid transparent;
+  color: var(--red);
+  border-bottom: 2px solid transparent;
   transition: all 0.3s linear;
   padding-bottom: 1rem;
+  padding-left: 8px;
+  padding-right: 8px;
+  text-shadow: 0 0 5px rgba(255, 0, 0, 0);
 }
 
 .nav-list_item a:hover {
-  border-bottom: 1px solid var(--white);
+  border-bottom: 2px solid var(--pink);
+  color: var(--white);
+  text-shadow: 0 0 10px rgba(255, 0, 0, 7);
 }
 
 .nav-btn {
@@ -78,7 +87,7 @@ body {
   display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 700px) {
 .nav-btn {
   display: block;
  }
@@ -112,7 +121,7 @@ body {
 }
 
 .phone-nav_list_item {
-  border-bottom: 1px solid var(--white);
+  border-bottom: 1px solid var(--red);
   width: 100%;
 }
 
@@ -131,30 +140,60 @@ body {
   position: fixed;
   inset: 0;
   z-index: 98;
-  background-color: #250304;
-  transition: all 0.3s linear;
-}
+  background: linear-gradient(135deg, #250304, #d30a0d); 
+  opacity: 0; 
+  transition: all 0.5s ease-in-out;
+  animation: fadeIn 0.5s ease-in-out forwards;
+  }
+  
+  @keyframes fadeIn {
+  0% {
+  opacity: 0;
+  }
+  100% {
+  opacity: 1;
+  }
+  }
 
 .main {
   width: 100%;
 }
 
 .hero-section {
-  height: 100vh;
   background-image: url(../assets/banner.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   position: relative;
+  height: 100vh;
   margin-bottom: 0;
-}
-
-.hero-heading {
+  }
+  
+  .next-section {
+  margin-top: 10rem;
+  }
+  
+  .hero-heading {
   position: absolute;
-  top: 20%;
-  left: 10%;
+  top: 40%;
+  left: 70%;
+  transform: translate(-50%, -50%);
   color: var(--red);
-}
+  text-align: center;
+  width: 100%;
+  max-width: 50rem;
+  }
+  /* .hero-logo {
+    position: absolute;
+    right: 20;
+    top: 0;
+  } */
+  
+  @media screen and (max-width: 767px) {
+  .hero-section {
+  height: 50vh; /* Adjust the height for smaller screens */
+  }
+  }
 
 .heading-1 {
   font-weight: 700;
@@ -188,18 +227,24 @@ body {
 }
 
 .autopsy-section {
-  width:100%;
-  background-image: linear-gradient(to bottom, #000000, #ffd700);
-  /* background-image: url(../assets/midbanner.jpg); */
+  width: 100%;
+  background-image: url(../assets/hero.jpg);
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: top center;
   background-size: cover;
-  margin: 12rem auto;
+  height: 100vh;
   position: relative;
   display: flex;
   flex-wrap: wrap;
   margin-top: 0;
-}
+  }
+  
+  @media screen and (max-width: 768px) {
+  .autopsy-section {
+  height: auto;
+  min-height: 100vh;
+  }
+  }
 
 .content-container {
   width: 100%;
@@ -245,6 +290,9 @@ body {
 .human-box {
   position: relative;
   flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .human {
@@ -257,7 +305,9 @@ body {
     height: 100vh !important;
     position: absolute;
     top: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    /* right: 500; */
   }
 
 .human img {
@@ -274,108 +324,136 @@ body {
 .human-img {
   /* z-index: 2; */
 }
-.points{
+.points {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 52%;
+  left: 75%;
+  transform: translate(-50%, -50%);
   width: 3em;
   height: 3em;
   border: none;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.629);
+  background: linear-gradient(135deg, #f44336, #ff5722); 
   color: white;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s;
-  z-index: 99;
-}
-.points::before{
+  transition: all 0.4s ease; 
+  z-index: 10;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0);
+  }
+  
+  .points::before {
   position: absolute;
   top: 45px;
   left: -90px;
-  background: rgba(0, 0, 0, 0.629);
+  background: rgba(0, 0, 0, 0.8); 
   color: white;
   width: 200px;
-  /* height: 80px; */
   padding: 1em;
   border-radius: 5px;
-  text-align: left;
-  font-size: 1rem;
+  text-align: center;
+  font-size: 1.1rem;
   opacity: 0;
-  transition: all 0.2s;
+  transition: all 0.4s ease; 
   pointer-events: none;
-}
-
-.points:hover{
+  content: '';
+  }
+  
+  .points::after {
+  content: '';
+  position: absolute;
+  top: 35px;
+  left: -20px;
+  border-style: solid;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent rgba(0, 0, 0, 0.8) transparent transparent; 
+  opacity: 0;
+  transition: all 0.4s ease; 
+  }
+  
+  .points:hover {
   border-color: white;
-}
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  z-index: 100;
+  }
+  
+  .points:hover::before {
+  opacity: 1;
+  top: 55px;
+  }
+  
+  .points:hover::after {
+  opacity: 1;
+  top: 45px;
+  }
+
 
 #point-1::before{
-  content:'PITUITARY: Despite its small size, the gland influences nearly every part of your body. The hormones it produces help regulate important functions, such as growth, blood pressure and reproduction.';
+  content:'Elbow: Stem cells can be injected into the elbow to promote healing of injuries such as tennis elbow, golfers elbow, and elbow tendinitis.';
 }
 #point-1:hover::before{
   opacity: 1;
 }
 
 #point-2::before{
-  content:'BRAIN STEM: Responsible for regulating most of the body`s automatic functions that are essential for life. These include: breathing. heartbeat.';
+  content:'Hand: Stem cells can be injected into the hand to treat injuries such as trigger finger and hand tendinitis, promoting tissue regeneration and reducing inflammation.';
 }
 #point-2:hover::before{
   opacity: 1;
 }
 
 #point-3::before{
-  content:'OLFACTORY BULBS: The axons of olfactory receptor (smell receptor) cells extend directly into the highly organized olfactory bulb, where information about odours is processed.';
+  content:'Shoulder: Stem cells can be used to treat shoulder injuries such as rotator cuff tears, tendinitis, and arthritis, helping athletes to regain mobility and reduce pain.';
 }
 #point-3:hover::before{
   opacity: 1;
 }
 
 #point-4::before{
-  content:'OLFACTORY BULBS: The axons of olfactory receptor (smell receptor) cells extend directly into the highly organized olfactory bulb, where information about odours is processed.';
+  content:'Foot: Stem cells can be used to treat foot injuries such as plantar fasciitis and Achilles tendonitis, promoting tissue regeneration and reducing inflammation.';
 }
 #point-4:hover::before{
   opacity: 1;
 }
 
 #point-5::before{
-  content:'OLFACTORY BULBS: The axons of olfactory receptor (smell receptor) cells extend directly into the highly organized olfactory bulb, where information about odours is processed.';
+  content:'Ankle: Stem cells can be used to treat ankle injuries, including sprains and fractures, by promoting tissue regeneration and reducing inflammation.';
 }
 #point-5:hover::before{
   opacity: 1;
 }
 
 #point-6::before{
-  content:'OLFACTORY BULBS: The axons of olfactory receptor (smell receptor) cells extend directly into the highly organized olfactory bulb, where information about odours is processed.';
+  content:'Knee: Stem cell therapy can help athletes recover from knee injuries, including ligament tears and arthritis, by promoting tissue regeneration and reducing inflammation.';
 }
 #point-6:hover::before{
   opacity: 1;
 }
 
 #point-7::before{
-  content:'OLFACTORY BULBS: The axons of olfactory receptor (smell receptor) cells extend directly into the highly organized olfactory bulb, where information about odours is processed.';
+  content:'Back: Stem cell therapy can be used to treat back injuries such as herniated discs and degenerative disc disease, promoting tissue regeneration and reducing inflammation.';
 }
 #point-7:hover::before{
   opacity: 1;
 }
 
 #point-8::before{
-  content: 'Sample text'
+  content: 'Wrist: Stem cells can be injected into the wrist to help heal injuries such as carpal tunnel syndrome and wrist sprains, allowing athletes to regain mobility and reduce pain.'
 }
 #point-8:hover::before{
   opacity: 1;
 }
 
 #point-9::before{
-  content:'OLFACTORY BULBS: The axons of olfactory receptor (smell receptor) cfactory bulb, where information about odours is processed.';
+  content:'Neck: Stem cells can be used to treat neck injuries such as whiplash and herniated discs, reducing pain and inflammation and promoting tissue regeneration.';
 }
 #point-9:hover::before{
   opacity: 1;
 }
 #point-10::before{
-  content:'OLFACTORY BULBS: The axons of olfactory receptor (smell receptor) cells extend directly into the highly organized olfactory bulb, where information about odours is processed.';
+  content:'Hip: Stem cell therapy can help athletes recover from hip injuries, including labral tears and osteoarthritis, by promoting tissue regeneration and reducing inflammation.';
 }
 #point-10:hover::before{
   opacity: 1;
@@ -408,89 +486,114 @@ body {
   background-color: rgba(255, 255, 255, 0.5);
 }
 
-.footer-list {
-  margin-top: 9rem;
-  width: min(90%, 140rem);
-  margin-inline: auto;
-  gap: 5rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  font-size: 2rem;
-  margin-bottom: 3rem;
-}
-
-.footer-list_item:nth-of-type(2) {
-  margin-inline: auto;
-}
-
-.footer-list_item h4 {
-  margin-bottom: 1.5rem;
-  font-weight: 700;
-  line-height: 24px;
-  color: var(--white);
-}
-
-.footer-list_item p {
-  color: var(--white);
-  text-transform: lowercase;
-  font-weight: 400;
-  margin-bottom: 1rem;
-}
-
-.footer-logo {
-  width: min(90%, 160rem);
-  margin-inline: auto;
-  margin-bottom: 3rem;
-}
-
 .footer-banner {
-  background-image: linear-gradient(45deg, #250304, #c21c1f);
-}
-
-.banner-container {
+  background-color: var(--gret);
+  padding: 50px 0;
+  }
+  
+  .banner-container {
   display: flex;
-  flex-wrap: wrap;
-  gap: 2.5rem;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  width: min(90%, 160rem);
-  margin-inline: auto;
-  font-weight: 400;
-  font-size: 1.5rem;
-  line-height: 18px;
-  letter-spacing: 0.05em;
-  padding: 1.8rem 0;
-}
-
-.footer-banner_list {
-  display: flex;
-  gap: 1rem;
-  margin-inline: auto;
-}
-
-.footer-social {
-  display: flex;
   align-items: center;
-  gap: 1.5rem;
-}
-
-.social-list {
-  display: flex;
-  gap: 1rem;
-}
-
-.footer-banner_list-item a {
-  text-decoration: none;
-  color: var(--white);
-  border-bottom: 1px solid transparent;
-  padding-bottom: 5px;
-  transition: all 0.3s linear;
-}
-
-.footer-banner_list-item a:hover {
-  border-bottom: 1px solid var(--white);
-}
+  }
+  
+  .footer-banner_list {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    font-family: 'Roboto', sans-serif; /* Updated font family */
+    }
+    
+    .footer-banner_list-item a {
+    text-decoration: none;
+    color: var(--black);
+    border-bottom: 1px solid transparent;
+    padding-bottom: 5px;
+    transition: all 0.3s linear;
+    margin: 0 10px;
+    font-size: 18px;
+    position: relative; /* Added for the glowing effect */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    }
+    
+    .footer-banner_list-item a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--pink);
+    opacity: 0;
+    transition: all 0.3s linear;
+    }
+    
+    .footer-banner_list-item a:hover {
+    color: var(--white);
+    }
+    
+    .footer-banner_list-item a:hover::after {
+    opacity: 1;
+    bottom: -4px; /* Added for the glowing effect */
+    }
+    
+    .footer-banner_list-item a:hover {
+    text-shadow: 0 0 10px var(--red), 0 0 20px var(--red); /* Added for the neon glowing shadow */
+    }
+  
+    .footer-social {
+      margin-top: 20px;
+      text-align: center;
+      }
+      
+      .social-list {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+      }
+      
+      .social-icon {
+      margin-right: 20px;
+      position: relative;
+      }
+      
+      .social-icon:last-of-type {
+      margin-right: 0;
+      }
+      
+      .social-icon a {
+      display: inline-block;
+      filter: grayscale(100%) invert(100%);
+      transition: filter 0.3s;
+      }
+      
+      .social-icon:hover a {
+      filter: grayscale(0%) invert(0%);
+      }
+      
+      .social-icon::before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      width: calc(100% + 10px);
+      height: calc(100% + 10px);
+      border-radius: 50%;
+      background: rgba(255, 0, 0, 0);
+      box-shadow: 0 0 0 rgba(255, 0, 0, 0);
+      z-index: -1;
+      transition: box-shadow 0.3s;
+      }
+      
+      .social-icon:hover::before {
+      box-shadow: 0 0 8px rgba(255, 0, 0, 0.5), 0 0 12px rgba(255, 0, 0, 0.5);
+      }
+      
+      .footer-banner_list-item a:hover {
+      border-bottom: 1px solid var(--white);
+      }
 
 .hide-nav .phone-nav,
 .hide-nav .overlay {
@@ -532,7 +635,7 @@ body {
 
 #container3D canvas {
   width: 50%;
-  height: 100%;
+  height: 50%;
   position: absolute;
  overflow: hidden;
 }
@@ -542,3 +645,234 @@ body {
     display: none;
   }
 }
+
+.about-us {
+  text-align: center;
+  padding: 50px;
+  max-width: 90%;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 2px solid #f44336; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 0 50px rgba(244, 67, 54, 0.3); 
+  border-radius: 8px;
+  font-family: 'Roboto', sans-serif;
+  }
+  
+  .about-us h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #f44336;
+  }
+  
+  .about-us p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 0 auto;
+  max-width: 600px;
+  color: #555;
+  }
+  
+  @media screen and (min-width: 768px) {
+  .about-us {
+  padding: 100px 0;
+  }
+  .about-us p {
+  font-size: 20px;
+  max-width: 800px;
+  }
+  }
+  
+  * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  }
+
+/* body {
+  background-color: #f5f5f5;
+  font-family: 'Roboto', sans-serif;
+} */
+
+form {
+  margin: auto;
+  max-width: 500px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  border: 2px solid #f44336;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 0 10px rgba(244, 67, 54, 0.3);
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #f44336;
+  border-radius: 4px;
+  resize: vertical;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #ff7961;
+  box-shadow: 0 0 10px #ff7961;
+}
+
+input[type="submit"] {
+  background-color: #f44336;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+  margin: 20px auto 0;
+  transition: all 0.3s;
+}
+
+input[type="submit"]:hover {
+  background-color: #ff7961;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.col-25 {
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  width: 75%;
+  margin-top: 6px;
+}
+
+@‌media screen and (max-width: 600px) {
+
+  .col-25,
+  .col-75,
+  input[type="submit"] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+
+
+  
+.box-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  }
+  
+  .box {
+  position: relative;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 340px;
+  width: 50%;
+  max-width: 600px;
+  box-shadow: 0 0 0 2px #f44336;
+  transition: box-shadow 0.3s;
+  overflow: hidden;
+  }
+  
+  .box-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/black.png');
+  background-size: cover; /* Changed from 'contain' to 'cover' */
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  }
+  
+  .box:hover {
+  box-shadow: 0 0 10px 10px #f44336;
+  }
+  
+  
+  @media screen and (max-width: 768px) {
+  .box {
+  width: 80%; 
+  padding: 20%;
+  }
+  }
+
+  p {
+  margin: 0;
+  color: #fff; 
+  position: relative; 
+  }
+
+  .above-logo {
+   display: block;
+   /* margin: 0 auto; */
+   /* margin: -5 auto; */
+   
+
+  }
+
+  .copyright {
+    color: #333;
+    font-size: 16px;
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.8);
+    }
+
+
+
+    .nav-apps {
+      cursor: pointer;
+      display: block;
+    }
+    
+    /* @media (max-width: 700px) {
+    .nav-btn {
+      display: block;
+     }
+      
+    } */
+
+    /* glowing effect for particles */
+
+  /* .glowing-particles {
+    filter: drop-shadow(0 0 5px #c90076);
+    } */
+
+  /* .particles-container {
+    position: relative;
+    }
+    
+    .glow-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none; 
+    } */
+
+    /* #canvas-container {
+      position: relative;
+      }
+      
+      #particles-js canvas,
+      #glow-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      }
+      
+      .glowing-particles {
+      filter: blur(4px) brightness(150%);
+      } */

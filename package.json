@@ -12,7 +12,7 @@
     "build": "npm run copyjs && npm run usemin && npm run copyimg && npm run copyimg && npm run copycss",
     "copycss": "copyfiles -f css/* public/css",
     "copyimg": "copyfiles -f assets/* public/assets",
-    "usemin": "usemin index.html -d public --htmlmin -o public/index.html"
+    "usemin": "usemin index.html -d public --htmlmin -o public/index.html && usemin bot.html -d public --htmlmin -o public/bot.html"
   },
   "author": "sam paniagua",
   "license": "ISC",

@@ -172,3 +172,19 @@ height: 30px;
     justify-content: center;
     align-items: center;
 }
+
+.glowing-image {
+    display: inline-block;
+    }
+    
+    .glowing-image img {
+    transition: all 0.3s ease;
+    }
+    
+    .glowing-image:hover img {
+    filter: brightness(1.5) drop-shadow(0 0 5px rgba(255, 0, 0, 0.8));
+    }
+    
+    .glowing-image:active img {
+    filter: brightness(1.9);
+    }
