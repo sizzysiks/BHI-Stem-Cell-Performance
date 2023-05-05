@@ -121,90 +121,92 @@ loader.load(
 // human points
 const points = [
   {
-    position: new THREE.Vector3(0,-1,0.1),
+    position: new THREE.Vector3(10.5,-2,0.1),
     element: document.querySelector('#point-1')
   },
   {
-    position: new THREE.Vector3(6,-10,0.1),
+    position: new THREE.Vector3(10.9,0,0.1),
     element: document.querySelector('#point-2')
   },
   {
-    position: new THREE.Vector3(7,-5,-0.1),
+    position: new THREE.Vector3(6.5,-4.5,-0.1),
     element: document.querySelector('#point-3')
   },
   {
-    position: new THREE.Vector3(7,1, -0.1),
+    position: new THREE.Vector3(6.8,5.2, -0.1),
     element: document.querySelector('#point-4')
   },
   {
-    position: new THREE.Vector3(1,6,-0.1),
+    position: new THREE.Vector3(10,4.8,-0.1),
     element: document.querySelector('#point-5')
   },
   {
-    position: new THREE.Vector3(3,3,-0.1),
+    position: new THREE.Vector3(10,3,-0.1),
     element: document.querySelector('#point-6')
   },
   {
-    position: new THREE.Vector3(2,-5,-0.1),
+    position: new THREE.Vector3(10,-4.0,-0.1),
     element: document.querySelector('#point-7')
   },
   {
-    position: new THREE.Vector3(5,0,-0.1),
+    position: new THREE.Vector3(5.5,0,0.1),
     element: document.querySelector('#point-8')
   },
   {
-    position: new THREE.Vector3(5,-4,0.1),
+    position: new THREE.Vector3(9,-5,0.1),
     element: document.querySelector('#point-9')
   },
   {
-    position: new THREE.Vector3(3,-8,0.1),
+    position: new THREE.Vector3(8,0,0.1),
     element: document.querySelector('#point-10')
   },
 ]
 
-// hulk points
+// alternative implamentation 
 // const points = [
 //   {
-//     position: new THREE.Vector3(-2,-1,0.1),
-//     element: document.querySelector('#point-1')
+//   position: { x: 0.55, y: 0.45 },
+//   element: document.querySelector('#point-1'),
 //   },
 //   {
-//     position: new THREE.Vector3(1,-10,0.1),
-//     element: document.querySelector('#point-2')
+//   position: { x: 0.575, y: 0.5 },
+//   element: document.querySelector('#point-2'),
 //   },
 //   {
-//     position: new THREE.Vector3(-0,-5,-0.6),
-//     element: document.querySelector('#point-3')
+//   position: { x: 0.4, y: 0.35 },
+//   element: document.querySelector('#point-3'),
 //   },
 //   {
-//     position: new THREE.Vector3(1,1, -0.1),
-//     element: document.querySelector('#point-4')
+//   position: { x: 0.425, y: 0.7 },
+//   element: document.querySelector('#point-4'),
 //   },
 //   {
-//     position: new THREE.Vector3(-2,6,-0.1),
-//     element: document.querySelector('#point-5')
+//   position: { x: 0.55, y: 0.68 },
+//   element: document.querySelector('#point-5'),
 //   },
 //   {
-//     position: new THREE.Vector3(1.5,7,-0.1),
-//     element: document.querySelector('#point-6')
+//   position: { x: 0.55, y: 0.6 },
+//   element: document.querySelector('#point-6'),
 //   },
 //   {
-//     position: new THREE.Vector3(-1,-7,-0.1),
-//     element: document.querySelector('#point-7')
+//   position: { x: 0.55, y: 0.35 },
+//   element: document.querySelector('#point-7'),
 //   },
 //   {
-//     position: new THREE.Vector3(4,-1,-0.1),
-//     element: document.querySelector('#point-8')
+//   position: { x: 0.4, y: 0.5 },
+//   element: document.querySelector('#point-8'),
 //   },
 //   {
-//     position: new THREE.Vector3(-2,-12,0.5),
-//     element: document.querySelector('#point-9')
+//   position: { x: 0.525, y: 0.3 },
+//   element: document.querySelector('#point-9'),
 //   },
 //   {
-//     position: new THREE.Vector3(1,-10,0.1),
-//     element: document.querySelector('#point-10')
+//   position: { x: 0.475, y: 0.5 },
+//   element: document.querySelector('#point-10'),
 //   },
-// ]
+//   ];
+
+
 
 //Instantiate a new renderer and set its size
 const renderer = new THREE.WebGLRenderer({ alpha: true }); //Alpha: true allows for the transparent background

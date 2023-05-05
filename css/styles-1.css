@@ -340,7 +340,7 @@ body {
   align-items: center;
   justify-content: center;
   transition: all 0.4s ease; 
-  z-index: 99;
+  z-index: 10;
   box-shadow: 0 0 5px rgba(255, 255, 255, 0);
   }
   
@@ -353,8 +353,8 @@ body {
   width: 200px;
   padding: 1em;
   border-radius: 5px;
-  text-align: left;
-  font-size: 1.2rem;
+  text-align: center;
+  font-size: 1.1rem;
   opacity: 0;
   transition: all 0.4s ease; 
   pointer-events: none;
@@ -374,8 +374,9 @@ body {
   }
   
   .points:hover {
-    border-color: white;
+  border-color: white;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  z-index: 100;
   }
   
   .points:hover::before {
@@ -388,36 +389,37 @@ body {
   top: 45px;
   }
 
+
 #point-1::before{
-  content:'PITUITARY: Despite its small size, the gland influences nearly every part of your body. The hormones it produces help regulate important functions, such as growth, blood pressure and reproduction.';
+  content:'Elbow: Stem cells can be injected into the elbow to promote healing of injuries such as tennis elbow, golfers elbow, and elbow tendinitis.';
 }
 #point-1:hover::before{
   opacity: 1;
 }
 
 #point-2::before{
-  content:'BRAIN STEM: Responsible for regulating most of the body`s automatic functions that are essential for life. These include: breathing. heartbeat.';
+  content:'Hand: Stem cells can be injected into the hand to treat injuries such as trigger finger and hand tendinitis, promoting tissue regeneration and reducing inflammation.';
 }
 #point-2:hover::before{
   opacity: 1;
 }
 
 #point-3::before{
-  content:'OLFACTORY BULBS: The axons of olfactory receptor (smell receptor) cells extend directly into the highly organized olfactory bulb, where information about odours is processed.';
+  content:'Shoulder: Stem cells can be used to treat shoulder injuries such as rotator cuff tears, tendinitis, and arthritis, helping athletes to regain mobility and reduce pain.';
 }
 #point-3:hover::before{
   opacity: 1;
 }
 
 #point-4::before{
-  content:'OLFACTORY BULBS: The axons of olfactory receptor (smell receptor) cells extend directly into the highly organized olfactory bulb, where information about odours is processed.';
+  content:'Foot: Stem cells can be used to treat foot injuries such as plantar fasciitis and Achilles tendonitis, promoting tissue regeneration and reducing inflammation.';
 }
 #point-4:hover::before{
   opacity: 1;
 }
 
 #point-5::before{
-  content:'OLFACTORY BULBS: The axons of olfactory receptor (smell receptor) cells extend directly into the highly organized olfactory bulb, where information about odours is processed.';
+  content:'Ankle: Stem cells can be used to treat ankle injuries, including sprains and fractures, by promoting tissue regeneration and reducing inflammation.';
 }
 #point-5:hover::before{
   opacity: 1;
@@ -431,27 +433,27 @@ body {
 }
 
 #point-7::before{
-  content:'OLFACTORY BULBS: The axons of olfactory receptor (smell receptor) cells extend directly into the highly organized olfactory bulb, where information about odours is processed.';
+  content:'Back: Stem cell therapy can be used to treat back injuries such as herniated discs and degenerative disc disease, promoting tissue regeneration and reducing inflammation.';
 }
 #point-7:hover::before{
   opacity: 1;
 }
 
 #point-8::before{
-  content: 'Sample text'
+  content: 'Wrist: Stem cells can be injected into the wrist to help heal injuries such as carpal tunnel syndrome and wrist sprains, allowing athletes to regain mobility and reduce pain.'
 }
 #point-8:hover::before{
   opacity: 1;
 }
 
 #point-9::before{
-  content:'OLFACTORY BULBS: The axons of olfactory receptor (smell receptor) cfactory bulb, where information about odours is processed.';
+  content:'Neck: Stem cells can be used to treat neck injuries such as whiplash and herniated discs, reducing pain and inflammation and promoting tissue regeneration.';
 }
 #point-9:hover::before{
   opacity: 1;
 }
 #point-10::before{
-  content:'OLFACTORY BULBS: The axons of olfactory receptor (smell receptor) cells extend directly into the highly organized olfactory bulb, where information about odours is processed.';
+  content:'Hip: Stem cell therapy can help athletes recover from hip injuries, including labral tears and osteoarthritis, by promoting tissue regeneration and reducing inflammation.';
 }
 #point-10:hover::before{
   opacity: 1;
