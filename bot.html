@@ -4,8 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title> Learn </title>
+    <title> testimonials </title>
     <link rel="stylesheet" href="./css/styles-1.css" />
+    <link rel="stylesheet" href="./css/bot.css" />
+    <script type="module" src="gpt.js"></script>
+
   </head>
   <body class="hide-nav">
     <div class="phone-nav">
@@ -16,53 +19,44 @@
         <li class="phone-nav_list_item"><a href="#">Learn</a></li>
         <li class="phone-nav_list_item"><a href="/#contactme">Contact us</a></li>
       </ul>
+      <style>
+        
+      </style>
     </div>
 
-    <div class="overlay"></div>
+    <!-- <div class="overlay"></div> -->
 
     <header class="header">
-      <img src="./assets/logo.png" width="75" alt="athletes logo" class="header-logo" />
+      <!-- <img src="./assets/logo.png" width="75" alt="athletes logo" class="header-logo" /> -->
       <nav class="nav">
-        <ul class="nav-list">
+        <!-- <ul class="nav-list">
           <li class="nav-list_item"><a href="/">Home</a></li>
           <li class="nav-list_item"><a href="/#aboutme">About us</a></li>
           <li class="nav-list_item"><a href="#">Learn</a></li>
           <li class="nav-list_item"><a href="/#contactme">Contact us</a></li>
-        </ul>
+        </ul> -->
       </nav>
-      <img src="./assets/nav-btn.svg" alt="navbar button" class="nav-btn" />
+      <img src="./assets/nav-btn-red.svg" alt="navbar button" class="nav-apps" />
+      
     </header>
 
 
-  
-
-    <main class="main">
-      
-      <section class="autopsy-section">
-        <div class="content-container">
-       
-          </div>
-          <div class="human">
-         
-            <div id="container3D">
-               <div class="points" id="point-1">1</div>
-            <div class="points" id="point-2">2</div>
-            <div class="points" id="point-3">3</div>
-            <div class="points" id="point-4">4</div>
-            <div class="points" id="point-5">5</div>
-            <div class="points" id="point-6">6</div>
-            <div class="points" id="point-7">7</div>
-            <div class="points" id="point-8">8</div>
-            <div class="points" id="point-9">9</div>
-            <div class="points" id="point-10">10</div>
-            </div>
+<div class="appcontainer">
+    <div id="app">
+        <div id="chat_container"></div>
         
-          </div>
-     
-      </section>
+          <form>
+            <textarea name="prompt" rows="1" cols="1" placeholder="Ask BHI Performance..."></textarea>
+            <button type="submit"><img src="assets/send.svg" alt="send" />
+          </form>
+        </div>
+    </div>
+        
+        <!-- <script type="module" src="gpt.js"></script> -->
 
+    
       <!-- <div class="underline"></div> -->
-    </main>
+   
 
     <footer>
       <section class="footer-banner">
@@ -116,10 +110,11 @@
           </div>
         </div>
       </section>
+    </div>
     </footer>
-    <script src="./js/main.js"></script>
+    <!-- <script src="./js/main.js"></script> -->
     <!-- <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> -->
-    <script src="./js/script.js"></script>
-    <script type="module" src="./js/three.js"></script>
+    <!-- <script src="./js/script.js"></script>
+    <script type="module" src="./js/three.js"></script> -->
   </body>
 </html>

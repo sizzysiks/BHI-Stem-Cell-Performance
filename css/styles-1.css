@@ -825,6 +825,28 @@ input[type="submit"]:hover {
 
   }
 
+  .copyright {
+    color: #333;
+    font-size: 16px;
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.8);
+    }
+
+
+
+    .nav-apps {
+      cursor: pointer;
+      display: block;
+    }
+    
+    /* @media (max-width: 700px) {
+    .nav-btn {
+      display: block;
+     }
+      
+    } */
+
+    /* glowing effect for particles */
+
   /* .glowing-particles {
     filter: drop-shadow(0 0 5px #c90076);
     } */
