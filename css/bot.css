@@ -27,19 +27,18 @@ background: #1e1e1e;
         flex: 1;
         width: 100%;
         max-width: 800px;
-        height: calc(90% - 70px); /* subtract the height of the form and textarea */
+        height: calc(90% - 70px);
         overflow-y: scroll;
-       
-        
         display: flex;
         flex-direction: column;
         gap: 10px;
-        
         -ms-overflow-style: none;
         scrollbar-width: none;
-        
         padding-bottom: 20px;
         scroll-behavior: smooth;
+        border: 2px solid red;
+        box-shadow: 0 0 10px red, 0 0 20px red, 0 0 40px red, 0 0 80px red;
+        border-radius: 10px;
         }
 
 /* hides scrollbar */
@@ -72,7 +71,7 @@ width: 36px;
 height: 36px;
 border-radius: 5px;
 
-background: #5436DA;
+background: #a7052d;
 
 display: flex;
 justify-content: center;
@@ -92,7 +91,7 @@ object-fit: contain;
 .message {
 flex: 1;
 
-color: rgb(255, 0, 85);
+color: rgb(104, 3, 36);
 font-size: 20px;
 font-family: 'Source Code Pro', monospace;
 
@@ -124,29 +123,29 @@ gap: 10px;
 /* Add this keyframe animation */
 @keyframes moving-border {
 0% {
-border-color: rgb(235, 138, 238);
-box-shadow: 0 0 5px rgb(197, 125, 206);
+border-color: rgb(185, 35, 8);
+box-shadow: 0 0 5px rgb(170, 52, 5);
 }
 50% {
-border-color: #ff9bff;
-box-shadow: 0 0 5px #f89ee2;
+border-color: #ffffff;
+box-shadow: 0 0 5px rgb(255, 255, 255);
 }
 100% {
-border-color: rgb(255, 0, 221);
-box-shadow: 0 0 5px rgb(255, 0, 179);
+border-color: rgb(223, 4, 243);
+box-shadow: 0 0 5px rgb(255, 0, 212);
 }
 }
 
 /* Update the textarea CSS */
 textarea {
 width: 100%;
-color: rgb(189, 9, 224);
+color: rgb(8, 8, 1);
 font-size: 18px;
 font-family: 'Source Code Pro', monospace;
 padding: 10px;
 background: transparent;
 border-radius: 5px;
-border: 1px solid rgb(191, 68, 207);
+border: 1px solid rgb(209, 212, 26);
 outline: none;
 
 /* Add the animation */
